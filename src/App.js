@@ -7,12 +7,19 @@ class App extends Component {
     super(props);
     this.state = {
       currentPage: 1,
+      appState: {
+        people: {
+          numberOfPeople: 1,
+          hasInsurance: false,
+        },
+      },
     };
   }
   render() {
+    const appState = this.state.appState;
     return (
       <div className="App">
-        <People />
+        <People {...(appState.people)} saveAction={() => {}} />
       </div>
     );
   }
