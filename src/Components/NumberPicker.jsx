@@ -1,14 +1,11 @@
 import React from 'react';
 
 export default function NumberPicker({selectedNumber, numberRange, labelText, onChangeAction}) {
-    const options = numberRange.map(n => {
-        const selected = n === selectedNumber ? "selected" : "";
-        return <option value={n} selected={selected}>{n}</option>
-    });
+    const options = numberRange.map(n => <option key={n} value={n}>{n}</option>);
     return (
         <div>
             <label>{labelText}</label>
-            <select onChange={onChangeAction}>
+            <select onChange={onChangeAction} value={selectedNumber}>
                 {options}
             </select>
         </div>
