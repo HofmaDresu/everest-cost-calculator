@@ -12,6 +12,10 @@ class App extends Component {
           numberOfPeople: 1,
           hasInsurance: false,
         },
+        costs: {
+          perPerson: 100,
+          insurance: 50,
+        }
       },
     };
   }
