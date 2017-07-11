@@ -24,9 +24,19 @@ class App extends Component {
   }
   render() {
     const appState = this.state.appState;
+    let activeComponent;
+    switch(this.state.currentPage) {
+      case 1:
+        activeComponent = <People {...(appState.people)} saveAction={this.savePeopleAction} />;
+        break;
+      default:
+        activeComponent = null;
+        break;
+    }
+
     return (
       <div className="App">
-        <People {...(appState.people)} saveAction={this.savePeopleAction} />
+        {activeComponent}
       </div>
     );
   }
