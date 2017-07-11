@@ -15,11 +15,14 @@ class App extends Component {
       },
     };
   }
+  savePeopleAction = (people) => {
+    this.setState({appState: {...(this.state.appState), people}, currentPage: 2});
+  }
   render() {
     const appState = this.state.appState;
     return (
       <div className="App">
-        <People {...(appState.people)} saveAction={() => {}} />
+        <People {...(appState.people)} saveAction={this.savePeopleAction} />
       </div>
     );
   }

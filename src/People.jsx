@@ -29,7 +29,7 @@ export default class PeopleComponent extends Component {
             <div className="component">
                 <NumberPicker selectedNumber={this.state.numberOfPeople} numberRange={peopleCountRange} labelText={peopleCountLabelText} onChangeAction={this.handlePersonCountChange} />
                 <CheckboxPicker isSelected={this.state.hasInsurance} labelText={insuranceLabelText} onChangeAction={this.handleInsuranceChange} />
-                <NavButtons isFirst={true} onForwardAction={this.props.saveAction} />
+                <NavButtons isFirst={true} onForwardAction={() => this.props.saveAction(this.state)} />
             </div>
         );
     }
