@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import NumberPicker from './Components/NumberPicker';
 import CheckboxPicker from './Components/CheckboxPicker';
 
@@ -9,12 +10,25 @@ const peopleCountLabelText = "How many people are in your group?";
 const insuranceLabelText = "Do you want trip insurance?";
 
 export default class PeopleComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            numberOfPeople: props.numberOfPeople,
+            hasInsurance: props.hasInsurance
+        };
+    }
     render() {
         return (
             <div className="component">
-                <NumberPicker selectedNumber={3} numberRange={peopleCountRange} labelText={peopleCountLabelText} onChangeAction={() => {}} />
-                <CheckboxPicker isSelected={false} labelText={insuranceLabelText} onChangeAction={() => {}} />
+                <NumberPicker selectedNumber={this.state.numberOfPeople} numberRange={peopleCountRange} labelText={peopleCountLabelText} onChangeAction={() => {}} />
+                <CheckboxPicker isSelected={this.state.hasInsurance} labelText={insuranceLabelText} onChangeAction={() => {}} />
             </div>
         );
     }
 }
+
+PeopleComponent.propTypes = {
+    numberOfPeople: PropTypes.number.isRequired,
+    hasInsurance: PropTypes.bool.isRequired,
+    saveAction: PropTypes.func.isRequired,
+};
