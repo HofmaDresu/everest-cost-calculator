@@ -19,8 +19,15 @@ class App extends Component {
             includeVisaFees: true,
         },
         costs: {
-          perPerson: 100,
-          insurance: 50,
+          people: {
+            perPerson: 4299,
+            insuranceEach: 264,
+          },
+          flights: {
+            international: 2000,
+            domestic: 450,
+            visa: 25,
+          },
         }
       },
     };
