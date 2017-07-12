@@ -27,7 +27,7 @@ export default class PeopleComponent extends Component {
     render() {
         return (
             <div className="component">
-                <h1>People</h1>
+                <h1>Booking Costs</h1>
                 <NumberPicker selectedNumber={this.state.numberOfPeople} numberRange={peopleCountRange} labelText={peopleCountLabelText} onChangeAction={this.handlePersonCountChange} />
                 <CheckboxPicker isSelected={this.state.hasInsurance} labelText={insuranceLabelText} onChangeAction={this.handleInsuranceChange} />
                 <NavButtons isFirst={true} onForwardAction={() => this.props.saveAction(this.state)} />
