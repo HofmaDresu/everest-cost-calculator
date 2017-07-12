@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import People from './People';
 import Flights from './Flights';
+import GearItems from './GearItems';
+import Gear from './Gear';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class App extends Component {
             includeDomesticInNepal: true,
             includeVisaFees: true,
         },
+        gearItems: GearItems.map(a => Object.assign({}, a)),
         costs: {
           people: {
             perPerson: 4299,
@@ -38,6 +41,9 @@ class App extends Component {
   saveFlightsAction = (flights) => {
     this.setState({appState: {...(this.state.appState), flights}, currentPage: 3});
   }
+  saveGearAction = (gearItems) => {
+    this.setState({appState: {...(this.state.appState), gearItems}, currentPage: 4});
+  }
   backAction = () => {
     this.setState(prevState => ({currentPage: prevState.currentPage-1}));
   }
@@ -50,6 +56,9 @@ class App extends Component {
         break;
       case 2:
         activeComponent = <Flights {...(appState.flights)} saveAction={this.saveFlightsAction} backAction={this.backAction} />;
+        break;
+      case 3: 
+        activeComponent = <Gear gearItems={appState.gearItems} saveAction={this.saveGearAction} backAction={this.backAction} />;
         break;
       default:
         activeComponent = null;
