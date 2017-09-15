@@ -1,0 +1,24 @@
+#gear-list {
+    overflow-y: auto;
+    margin-right: -15px;
+    padding-right: 15px;
+}
+
+#gear.component {
+    display: flex;
+    flex-direction: column;
+}
+
+#gear h3 {
+    margin: 0;
+}
+
+#gear .number-picker {
+    display: flex;
+    justify-content: space-between;    
+    margin-bottom:5px;
+}
+
+#gear .number-picker:hover {
+    background: rgba(255, 255, 255, .4);
+}

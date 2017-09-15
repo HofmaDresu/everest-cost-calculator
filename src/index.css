@@ -4,13 +4,15 @@ html {
 
 body {
   height: 100%;
+  margin: 0;
 }
 
 .component {
   background-color: #999999;
-  padding: 30px 15px;
-  width: 30%;
-  
+  padding: 0 15px 30px;
+  width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 #root {

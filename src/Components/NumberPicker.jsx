@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function NumberPicker({selectedNumber, numberRange, labelText, onChangeAction}) {
     const options = numberRange.map(n => <option key={n} value={n}>{n}</option>);
     return (
-        <div>
+        <div className="number-picker">
             <label>{labelText}</label>
             <select onChange={onChangeAction} value={selectedNumber}>
                 {options}
