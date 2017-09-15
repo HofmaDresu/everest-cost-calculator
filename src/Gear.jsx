@@ -14,23 +14,23 @@ export default class PeopleComponent extends Component {
             gearItems: props.gearItems.map(a => Object.assign({}, a)),
         };
     }
-    handleItemChange = (gearIndex, event) => { 
+    handleItemChange = (gearId, event) => { 
         const selectedCount = parseInt(event.target.value, 10);
         this.setState(prevState => {
             const newState = prevState
-            newState.gearItems[gearIndex].currentCount = selectedCount;
+            newState.gearItems.filter(g => g.id === gearId)[0].currentCount = selectedCount;
             return newState;
         })
     }
     render() {
         const requiredPickers = this.state.gearItems.filter(i => i.level === "Required").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(g.id, e)} />
         );
         const recommendedPickers = this.state.gearItems.filter(i => i.level === "Recommended").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(g.id, e)} />
         );
         const optionalPickers = this.state.gearItems.filter(i => i.level === "Optional").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(g.id, e)} />
         );
         return (
             <div id="gear" className="component">
