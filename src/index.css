@@ -8,11 +8,12 @@ body {
 }
 
 .component {
-  background-color: #999999;
+  background-color: #cccccc;
   padding: 0 15px 30px;
   width: 600px;
   max-height: 90vh;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 #root {
