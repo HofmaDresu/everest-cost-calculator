@@ -8,12 +8,15 @@ export default function NavButtons({isFirst, isLast, onForwardAction, onBackActi
             <input type="button" onClick={onBackAction} value="Back"/>
         </span>
     )
+    const secondButton = isLast ? null : (
+        <span className="forward-button">
+            <input type="button" onClick={onForwardAction} value={isLast ? "Finish" : "Next"} />
+        </span>
+    )
     return (
         <div id="nav-buttons">
             {firstButton}
-            <span className="forward-button">
-                <input type="button" onClick={onForwardAction} value={isLast ? "Finish" : "Next"} />
-            </span>
+            {secondButton}
         </div>
     ); 
 }
@@ -21,6 +24,6 @@ export default function NavButtons({isFirst, isLast, onForwardAction, onBackActi
 NavButtons.propTypes = {
     isFirst: PropTypes.bool,
     isLast: PropTypes.bool,
-    onForwardAction: PropTypes.func.isRequired,
+    onForwardAction: PropTypes.func,
     onBackAction: PropTypes.func,
 };

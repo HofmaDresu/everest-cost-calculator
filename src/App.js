@@ -4,6 +4,7 @@ import People from './People';
 import Flights from './Flights';
 import GearItems from './GearItems';
 import Gear from './Gear';
+import TotalCost from './TotalCost';
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +60,9 @@ class App extends Component {
         break;
       case 3: 
         activeComponent = <Gear gearItems={appState.gearItems} saveAction={this.saveGearAction} backAction={this.backAction} />;
+        break;
+      case 4: 
+        activeComponent = <TotalCost appState={appState} backAction={this.backAction} />;
         break;
       default:
         activeComponent = null;

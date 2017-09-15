@@ -44,7 +44,7 @@ export default class PeopleComponent extends Component {
                     <h4>Optional</h4>
                     {optionalPickers} 
                 </div>
-                <NavButtons isLast={true} onBackAction={this.props.backAction} onForwardAction={() => this.props.saveAction(this.state)} />
+                <NavButtons onBackAction={this.props.backAction} onForwardAction={() => this.props.saveAction(this.state.gearItems)} />
             </div>
         );
     }
