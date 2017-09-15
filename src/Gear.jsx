@@ -24,13 +24,13 @@ export default class PeopleComponent extends Component {
     }
     render() {
         const requiredPickers = this.state.gearItems.filter(i => i.level === "Required").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(20).keys()]} labelText={g.name} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
         );
         const recommendedPickers = this.state.gearItems.filter(i => i.level === "Recommended").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(20).keys()]} labelText={g.name} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
         );
         const optionalPickers = this.state.gearItems.filter(i => i.level === "Optional").map((g, i) => 
-            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(20).keys()]} labelText={g.name} onChangeAction={e => this.handleItemChange(i, e)} />
+            <NumberPicker key={i} selectedNumber={g.currentCount} numberRange={[...Array(21).keys()]} labelText={`${g.name} -- $${g.price}`} onChangeAction={e => this.handleItemChange(i, e)} />
         );
         return (
             <div id="gear" className="component">
