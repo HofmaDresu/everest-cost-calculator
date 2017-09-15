@@ -16,6 +16,11 @@ body {
   border-radius: 5px;
 }
 
+.disclaimer {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 #root {
   height: 100%;
   width: 100%;

@@ -71,7 +71,13 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div className="spacer"></div>
         {activeComponent}
+        <div className="disclaimer">
+          Trip info and gear list gathered from <a target="_blank" rel="noopener noreferrer" href="https://www.rei.com/adventures/trips/asia/mount-everest-base-camp-trek.html">REI Adventures</a>
+          <br />
+          Travel and Gear prices heavily estimated
+        </div>
       </div>
     );
   }
