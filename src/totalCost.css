@@ -1,0 +1,11 @@
+#total-cost .costs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 150px;
+    grid-row-gap: 5px;
+}
+
+#total-cost .total {
+    font-weight: bold;
+    font-size: 1.3em;
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import NavButtons from './Components/NavButtons';
+import './totalCost.css';
 
 export default class TotalCost extends Component {
     render() {
@@ -16,9 +17,18 @@ export default class TotalCost extends Component {
 
         const totalCost = tripCost + flightCost + gearCost;
         return (
-            <div className="component">
-                <h1>Total Cost</h1>
-                <h2>${totalCost}</h2>
+            <div id="total-cost" className="component">
+                <h1>Trip Cost</h1>
+                <div className="costs">
+                    <div className="title">Booking:</div>
+                    <div className="cost">${tripCost}</div>
+                    <div className="title">Travel:</div>
+                    <div className="cost">${flightCost}</div>
+                    <div className="title">Gear:</div>
+                    <div className="cost">${gearCost}</div>
+                    <div className="title total">Total:</div>
+                    <div className="cost total">${totalCost}</div>
+                </div>
                 <NavButtons onBackAction={() => this.props.backAction(this.state)} isLast={true} />
             </div>
         );
