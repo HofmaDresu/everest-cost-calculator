@@ -21,10 +21,14 @@ export default function Print({appState}) {
             {people.hasInsurance ? <div>Insurance cost for {people.numberOfPeople} people:</div> : null}
             {people.hasInsurance ? <div>${people.insuranceEachCost * people.numberOfPeople}</div> : null}   
             <div className="subtotal">Subtotal: </div>
-            <div className="subtotal">{tripCost}</div>
+            <div className="subtotal">${tripCost}</div>
             <h1>Travel Costs</h1>    
+            <div className="subtotal">Subtotal: </div>
+            <div className="subtotal">${flightCost}</div>
             
             <h1>Gear Costs</h1>   
+            <div className="subtotal">Subtotal: </div>
+            <div className="subtotal">${gearCost}</div>
 
             <div className="total">Total:</div>
             <div className="total">${totalCost}</div>      
