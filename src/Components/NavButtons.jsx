@@ -8,7 +8,13 @@ export default function NavButtons({isFirst, isLast, onForwardAction, onBackActi
             <input type="button" onClick={onBackAction} value="Back"/>
         </span>
     )
-    const secondButton = isLast ? null : (
+    const secondButton = isLast ? 
+      (
+        <span className="forward-button">
+            <input type="button" onClick={window.print} value="Print all choices" />
+        </span>
+      )
+      : (
         <span className="forward-button">
             <input type="button" onClick={onForwardAction} value={isLast ? "Finish" : "Next"} />
         </span>
