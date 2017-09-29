@@ -22,3 +22,11 @@
 #gear .number-picker:hover {
     background: rgba(255, 255, 255, .4);
 }
+
+#gear .items-wrapper h4 {
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    background-color: #cccccc;
+    margin: 20px 0 0 0;
+}

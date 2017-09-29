@@ -37,12 +37,18 @@ export default class PeopleComponent extends Component {
                 <h1>Gear Costs</h1>
                 <h3>How many of each of the following items do you need?</h3>
                 <div id="gear-list">
-                    <h4>Required</h4>
-                    {requiredPickers}
-                    <h4>Recommended</h4>
-                    {recommendedPickers}
-                    <h4>Optional</h4>
-                    {optionalPickers} 
+                    <div className="items-wrapper">
+                        <h4>Required</h4>
+                        {requiredPickers}
+                    </div>
+                    <div className="items-wrapper">
+                        <h4>Recommended</h4>
+                        {recommendedPickers}
+                    </div>
+                    <div className="items-wrapper">
+                        <h4>Optional</h4>
+                        {optionalPickers} 
+                    </div>
                 </div>
                 <NavButtons onBackAction={this.props.backAction} onForwardAction={() => this.props.saveAction(this.state.gearItems)} />
             </div>
