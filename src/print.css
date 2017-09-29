@@ -1,6 +1,5 @@
 .print-section {
     grid-template-columns: 1fr 100px;
-    padding: 10px 20px;
 }
 
 .print-section h1 {
