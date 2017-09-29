@@ -6,16 +6,15 @@ import NavButtons from './Components/NavButtons';
 
 
 const peopleCountRange = [1,2,3,4];
-const peopleCountLabelText = "How many people are in your group?";
-
-const insuranceLabelText = "Do you want trip insurance?";
 
 export default class PeopleComponent extends Component {
     constructor(props) {
         super(props);
         this.state={
             numberOfPeople: props.numberOfPeople,
-            hasInsurance: props.hasInsurance
+            hasInsurance: props.hasInsurance,
+            perPersonCost: props.perPersonCost,
+            insuranceEachCost: props.insuranceEachCost,
         };
     }
     handlePersonCountChange = (event) => {        
@@ -28,8 +27,8 @@ export default class PeopleComponent extends Component {
         return (
             <div className="component">
                 <h1>Booking Costs</h1>
-                <NumberPicker selectedNumber={this.state.numberOfPeople} numberRange={peopleCountRange} labelText={peopleCountLabelText} onChangeAction={this.handlePersonCountChange} />
-                <CheckboxPicker isSelected={this.state.hasInsurance} labelText={insuranceLabelText} onChangeAction={this.handleInsuranceChange} />
+                <NumberPicker selectedNumber={this.state.numberOfPeople} numberRange={peopleCountRange} labelText={`How many people are in your group ($${this.props.perPersonCost} each)?`} onChangeAction={this.handlePersonCountChange} />
+                <CheckboxPicker isSelected={this.state.hasInsurance} labelText={`Do you want trip insurance ($${this.props.insuranceEachCost} each)?`} onChangeAction={this.handleInsuranceChange} />
                 <NavButtons isFirst={true} onForwardAction={() => this.props.saveAction(this.state)} />
             </div>
         );

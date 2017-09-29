@@ -5,14 +5,14 @@ import './totalCost.css';
 
 export default class TotalCost extends Component {
     render() {
-        let people, flights, gearItems, costs;
-        ({people, flights, gearItems, costs} = this.props.appState);
-        const tripCost = (costs.people.perPerson * people.numberOfPeople) +
-                        (people.hasInsurance ? costs.people.insuranceEach * people.numberOfPeople : 0);
+        let people, flights, gearItems;
+        ({people, flights, gearItems} = this.props.appState);
+        const tripCost = (people.perPersonCost * people.numberOfPeople) +
+                        (people.hasInsurance ? people.insuranceEachCost * people.numberOfPeople : 0);
 
-        const flightCost = (flights.includeInternational ? costs.flights.international * people.numberOfPeople : 0) +
-                            (flights.includeDomesticInNepal ? costs.flights.domestic * people.numberOfPeople : 0) +
-                            (flights.includeVisaFees ? costs.flights.visa * people.numberOfPeople : 0);
+        const flightCost = (flights.includeInternational ? flights.internationalCost * people.numberOfPeople : 0) +
+                            (flights.includeDomesticInNepal ? flights.domesticCost * people.numberOfPeople : 0) +
+                            (flights.includeVisaFees ? flights.visaCost * people.numberOfPeople : 0);
         const gearCost = gearItems.map(a => Object.assign({}, a)).reduce((sum, g) => sum + (g.price * g.currentCount), 0)
 
         const totalCost = tripCost + flightCost + gearCost;

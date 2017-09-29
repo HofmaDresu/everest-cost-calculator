@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import CheckboxPicker from './Components/CheckboxPicker';
 import NavButtons from './Components/NavButtons';
 
-
-const internationalLabelText = "Do you want to include international flight costs?";
-const domesticNepalLabelText = "Do you want to include domestic flights in Nepal?";
-const visaFeesLableText = "Do you want to include visa fees?";
-
 export default class FlightsComponent extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +10,9 @@ export default class FlightsComponent extends Component {
             includeInternational: props.includeInternational,
             includeDomesticInNepal: props.includeDomesticInNepal,
             includeVisaFees: props.includeVisaFees,
+            internationalCost: props.internationalCost,
+            domesticCost: props.domesticCost,
+            visaCost: props.visaCost,
         };
     }
     handleInternationalChange = (event) => {
@@ -30,9 +28,9 @@ export default class FlightsComponent extends Component {
         return (
             <div className="component">
                 <h1>Travel Costs</h1>
-                <CheckboxPicker isSelected={this.state.includeInternational} labelText={internationalLabelText} onChangeAction={this.handleInternationalChange} />
-                <CheckboxPicker isSelected={this.state.includeDomesticInNepal} labelText={domesticNepalLabelText} onChangeAction={this.handleDomesticChange} />
-                <CheckboxPicker isSelected={this.state.includeVisaFees} labelText={visaFeesLableText} onChangeAction={this.handleVisaChange} />
+                <CheckboxPicker isSelected={this.state.includeInternational} labelText={`Do you want to include international flight costs ($${this.props.internationalCost} per person)?`} onChangeAction={this.handleInternationalChange} />
+                <CheckboxPicker isSelected={this.state.includeDomesticInNepal} labelText={`Do you want to include domestic flights in Nepal ($${this.props.domesticCost} per person)?`} onChangeAction={this.handleDomesticChange} />
+                <CheckboxPicker isSelected={this.state.includeVisaFees} labelText={`Do you want to include visa fees ($${this.props.visaCost} per person)?`} onChangeAction={this.handleVisaChange} />
                 <NavButtons onBackAction={() => this.props.backAction(this.state)} onForwardAction={() => this.props.saveAction(this.state)} />
             </div>
         );

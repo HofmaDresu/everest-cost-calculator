@@ -15,24 +15,18 @@ class App extends Component {
         people: {
           numberOfPeople: 1,
           hasInsurance: false,
+          perPersonCost: 4299,
+          insuranceEachCost: 264,
         },
         flights: {
-            includeInternational: true,
-            includeDomesticInNepal: true,
-            includeVisaFees: true,
+          includeInternational: true,
+          includeDomesticInNepal: true,
+          includeVisaFees: true,
+          internationalCost: 2000,
+          domesticCost: 450,
+          visaCost: 25,
         },
         gearItems: GearItems.map(a => Object.assign({}, a)),
-        costs: {
-          people: {
-            perPerson: 4299,
-            insuranceEach: 264,
-          },
-          flights: {
-            international: 2000,
-            domestic: 450,
-            visa: 25,
-          },
-        }
       },
     };
   }
