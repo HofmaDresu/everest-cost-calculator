@@ -1,0 +1,19 @@
+.print-section {
+    grid-template-columns: 1fr 100px;
+    padding: 10px 20px;
+}
+
+.print-section h1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.print-section .subtotal {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.print-section .total {
+    font-weight: bold;
+    font-size: 2em;
+}

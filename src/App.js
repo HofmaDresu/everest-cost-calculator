@@ -5,6 +5,7 @@ import Flights from './Flights';
 import GearItems from './GearItems';
 import Gear from './Gear';
 import TotalCost from './TotalCost';
+import Print from './Print';
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +68,7 @@ class App extends Component {
       <div className="App">
         <div className="spacer"></div>
         {activeComponent}
+        <Print appState={appState} />
         <div className="disclaimer">
           Trip info and gear list gathered from <a target="_blank" rel="noopener noreferrer" href="https://www.rei.com/adventures/trips/asia/mount-everest-base-camp-trek.html">REI Adventures</a>
           <br />
