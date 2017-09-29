@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr;
     width: 150px;
     grid-row-gap: 5px;
+    margin-bottom: 20px;
 }
 
 #total-cost .total {
